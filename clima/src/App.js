@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+import Grid from './components/Grid';
 import './App.css';
 
 function App() {
   return (
-    <div>Hello world</div>
+    <main>
+      <Grid />
+    </main>
   );
 }
 
