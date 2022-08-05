@@ -3,7 +3,7 @@ import React from "react";
 
 const Article = () => {
     return (
-        <article>
+        <article className="weather-article">
             <h2>Date</h2>
             <img src="" alt="" />
             <p>Temp</p>

@@ -13,3 +13,11 @@ body {
 .container {
   width: 100%;
 }
+
+.weather-grid {
+  display: grid;
+  grid-template-areas:
+  ". . cuurent . ."
+  "D-one D-two D-three D-four"
+  ". . footer . .";
+}
