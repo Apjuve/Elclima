@@ -3,9 +3,11 @@ import './App.css';
 
 function App() {
   return (
-    <main>
-      <Grid />
-    </main>
+    <div className='container'>
+      <main className='main'>
+        <Grid />
+      </main>
+    </div>
   );
 }
 
