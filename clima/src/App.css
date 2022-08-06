@@ -16,6 +16,7 @@ body {
 
 .weather-grid {
   display: grid;
+  width: 100%;
   grid-template-areas:
   ". . cuurent . ."
   "D-one D-two D-three D-four"
