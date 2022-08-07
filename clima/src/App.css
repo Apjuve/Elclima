@@ -16,9 +16,20 @@ body {
 
 .weather-grid {
   display: grid;
+  padding: 10px;
+  gap: 10px;
   width: 100%;
   grid-template-areas:
-  ". . cuurent . ."
-  "D-one D-two D-three D-four"
-  ". . footer . .";
+  "D-one D-two D-three D-four";
+}
+
+.weather-article {
+  display: grid;
+  padding: 10px;
+  gap: 1rem;
+  grid-template-areas: 
+  "date"
+  "temp"
+  "wind"
+  "humidity";
 }
