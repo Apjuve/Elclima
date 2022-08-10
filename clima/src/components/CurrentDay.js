@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const currentDay = () => {
+const CurrentDay = () => {
     return (
-        <article>
+        <article className="currentDay">
             <h1>Todays weather:</h1>
             <h3>Date</h3>
             <p>Temp</p>
@@ -12,4 +12,4 @@ const currentDay = () => {
     )
 }
 
-export default currentDay
+export default CurrentDay
