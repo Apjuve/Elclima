@@ -7,7 +7,9 @@ const Search = () => {
             <form action="submit" className="search-form">
                 <label htmlFor="">
                     <input type="text" className="search" id="search" placeholder="Search here" />
+                    <button>
                     <RiSearchLine className="Search-icon"/>
+                    </button>
                 </label>
                     
             </form>
