@@ -84,6 +84,14 @@ body {
   "copyright";
 }
 
+.links {
+  grid-area: links;
+}
+
+.copyright {
+  grid-area: copyright;
+}
+
 @media screen and (min-width: 35em) {
   .weather-grid {
     grid-template-areas: 
