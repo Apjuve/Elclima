@@ -14,15 +14,21 @@ body {
   width: 100%;
 }
 
-.search {
+.search-area {
+  align-items: center;
   margin: 5rem;
   display: flex;
   justify-content: center;
 }
 
-.search-form {
-  display: flex;
-  flex-direction: row;
+.search {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
 
 .weather-grid {
