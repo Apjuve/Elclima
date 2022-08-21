@@ -3,7 +3,7 @@ import {RiSearchLine} from 'react-icons/ri'
 
 const Search = () => {
 
-    
+
     const [active, setActive] = useState(false)
 
     const handleToggle = () => {
@@ -14,6 +14,7 @@ const Search = () => {
 
                     <div className="search-area">
                         <div className="search">
+                            <div className={active ? "search active" : "search"}></div>
                             <div className="icon" onClick={handleToggle}></div>
                             <div className="input"></div>
                         </div>
