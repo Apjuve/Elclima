@@ -13,14 +13,14 @@ const Search = () => {
         
 
                     <div className="search-area">
-                        <div className="search">
-                            <div className={active ? "search active" : "search"}></div>
-                            <div className="icon" onClick={handleToggle}></div>
-                            <div className="input">
-                                <input type="text" placeholder="Search" id="city-search" />
-                            </div>
-                        </div>
+                            <div className={active ? "search active" : "search"}>
+                                <div className="icon" onClick={handleToggle}></div>
+                                    <div className="input">
+                                        <input type="text" placeholder="Search" id="city-search" />
+                                     </div>
+                                </div>
                     </div>
+                  
                 
             
     )
