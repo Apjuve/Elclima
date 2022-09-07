@@ -23,7 +23,7 @@ body {
 
 .search {
   position: relative;
-  width: 360px;
+  width: 60px;
   height: 60px;
   background: #fff;
   border-radius: 60px;
@@ -132,6 +132,10 @@ body {
   "D-five";
 }
 
+.footer {
+  bottom: 0;
+}
+
 .currentDay {
   grid-area: current;
   display: grid;
@@ -216,4 +220,9 @@ body {
     "current current current current current"
     "D-one D-two D-three D-four D-five";
   }
+
+  .footer {
+    bottom: 0;
+  }
 }
+
