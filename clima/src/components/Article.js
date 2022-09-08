@@ -1,9 +1,9 @@
 import React from "react";
 
 
-const Article = ({ identifier }) => {
+const Article = () => {
     return (
-        <article className={"weather-article ${identifier}"}>
+        <article className="weather-article">
             <h2>Date</h2>
             <p>Temp</p>
             <p>Wind</p>
