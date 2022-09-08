@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Article from "./Article";
 import CurrentDay from "./CurrentDay";
 
@@ -7,15 +7,15 @@ import CurrentDay from "./CurrentDay";
 
 const Grid = () => {
 
-    const [articles, setArticles] = useState ([
+    const articles = [
         1,2,3,4,5
-    ]);
+    ];
 
     return (
         <div className="weather-grid">
             <CurrentDay />
-            {articles.map(article => (
-                <Article key={article} />
+            {articles.map((article, i) => (
+                <Article key={article} identifier={article} />
             ))}
             </div>
     )
