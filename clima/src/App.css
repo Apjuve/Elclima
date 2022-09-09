@@ -123,13 +123,16 @@ body {
   padding: 10px;
   gap: 10px;
   width: 100%;
-  grid-template-areas:
+  /* grid-template-areas:
   "current"
   "D-one"
   "D-two"
   "D-three"
   "D-four"
-  "D-five";
+  "D-five"; */
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
 }
 
 .footer {
@@ -137,7 +140,7 @@ body {
 }
 
 .currentDay {
-  grid-area: current;
+  /* rowgrid-area: current; */
   display: grid;
   justify-content: center;
   gap: 10px;
@@ -147,20 +150,26 @@ body {
   border-radius: 20px;
 }
 
-.weather-article:nth-child(2) {
-  grid-area: D-one;
+.weather-article:nth-child(2):hover {
+  grid-row: span 2;
 }
-.weather-article:nth-child(3) {
-  grid-area: D-two;
+.weather-article:nth-child(3):hover {
+  grid-row: span-2;
 }
-.weather-article:nth-child(4) {
-  grid-area: D-three;
+.weather-article:nth-child(4):hover {
+  grid-row: span-2;
+}
+.weather-article:nth-child(5):hover {
+  grid-row: span-2;
+}
+.weather-article:nth-child(6):hover {
+  grid-row: span-2;
 }
 .weather-article:nth-child(5) {
-  grid-area: D-four;
+  grid-column: span-2;
 }
 .weather-article:nth-child(6) {
-  grid-area: D-five;
+  grid-column: span-2;
 }
 
 .weather-article {
@@ -205,24 +214,44 @@ body {
 
 @media screen and (min-width: 35em) {
   .weather-grid {
-    grid-template-areas: 
+    /* grid-template-areas: 
     "current current"
     "D-one D-two"
     "D-three D-four"
-    "D-five D-five";
+    "D-five D-five"; */
+    grid-template-columns: 1fr 1fr;
   }
   
 }
 
-@media screen and (min-width: 60em) {
-  .weather-grid {
-    grid-template-areas:
-    "current current current current current"
-    "D-one D-two D-three D-four D-five";
+  .currentDay {
+    grid-column: span 2;
   }
+  .weather-article:nth-child(6) {
+    grid-column: span 2;
+  }
+  .weather-article:nth-child(2):hover ~ .weather-article:nth-child(6) {
+    grid-column: 2/3;
+  }
+  .weather-article:nth-child(3):hover ~ .weather-article:nth-child(6) {
+    grid-column: 2/3;
+  }
+  .weather-article:nth-child(4):hover ~ .weather-article:nth-child(6) {
+    grid-column: 2/3;
+  }
+  .weather-article:nth-child(5):hover ~ .weather-article:nth-child(6) {
+    grid-column: 1/2;
+  }
+
+  @media screen and (min-width: 60em) {
+    .weather-grid {
+      grid-template-areas:
+      "current current current current current"
+      "D-one D-two D-three D-four D-five";
+    }
 
   .footer {
     bottom: 0;
   }
-}
+  }
 
