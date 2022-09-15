@@ -142,6 +142,7 @@ body {
 .currentDay {
   /* rowgrid-area: current; */
   display: grid;
+  grid-row: span 2;
   justify-content: center;
   gap: 10px;
   padding: 1.5rem;
@@ -165,12 +166,12 @@ body {
 .weather-article:nth-child(6):hover {
   grid-row: span-2;
 }
-.weather-article:nth-child(5) {
+/* .weather-article:nth-child(5) {
   grid-column: span-2;
 }
 .weather-article:nth-child(6) {
   grid-column: span-2;
-}
+} */
 
 .weather-article {
   display: grid;
@@ -227,9 +228,23 @@ body {
   .currentDay {
     grid-column: span 2;
   }
+
+
   .weather-article:nth-child(6) {
     grid-column: span 2;
   }
+
+  .weather-article:nth-child(6):hover {
+    grid-row: 4/6;
+    grid-column: 2/3;
+  }
+
+  .weather-article:nth-child(6):hover ~ .weather-article:nth-child(5) {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+
+
   .weather-article:nth-child(2):hover ~ .weather-article:nth-child(6) {
     grid-column: 2/3;
   }
@@ -245,13 +260,18 @@ body {
 
   @media screen and (min-width: 60em) {
     .weather-grid {
-      grid-template-areas:
-      "current current current current current"
-      "D-one D-two D-three D-four D-five";
+      grid-gap: 2rem;
+      justify-content: center;
+      grid-template-columns: repeat(3, 18rem);
+      grid-template-rows: 1fr 1fr;
     }
 
-  .footer {
-    bottom: 0;
+  .currentDay {
+    grid-column: span 3;
+  }
+
+  .weather-article:nth-child(6) {
+    grid-column: 3rem;
   }
   }
 
