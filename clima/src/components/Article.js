@@ -1,9 +1,11 @@
-import React from "react";
+import {useState} from "react";
 
 
 const Article = () => {
+    const [active, setActive] = useState(false);
+
     return (
-        <article className="weather-article">
+        <article className={active ? 'weather-article active' : 'weather-article'} onClick={() => {active ? setActive(false) : setActive(true)}}>
             <h2>Date</h2>
             <p>Temp</p>
             <p>Wind</p>
