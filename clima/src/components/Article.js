@@ -4,6 +4,12 @@ import {useState, useEffect} from "react";
 const Article = ({ identifier }) => {
     const [active, setActive] = useState(false);
 
+    const handleSetActive = (article) => {
+        const currentArticle = article;
+        console.log(currentArticle);
+
+    }
+
     const handleNewClick = () => {
         const filtered = [];
         active ? setActive (false) : setActive(true);
@@ -17,7 +23,7 @@ const Article = ({ identifier }) => {
     }
 
     return (
-        <article className={active ? 'weather-article active' : 'weather-article'} onClick={() => {handleNewClick ()}}>
+        <article className={active ? 'weather-article active' : 'weather-article'} onClick={(e) => handleSetActive(e.target.parentElement)}>
             <h2>Date</h2>
             <p>Temp</p>
             <p>Wind</p>
