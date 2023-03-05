@@ -5,8 +5,18 @@ const Article = ({ identifier }) => {
     const [active, setActive] = useState(false);
 
     const handleSetActive = (article) => {
+        const articles = document.querySelectorAll('.weather-article');
         const currentArticle = article;
         console.log(currentArticle);
+        for (let index = 0; index < articles.length; index++) {
+            const element = articles[index];
+            if (element !== currentArticle)
+            element.className = 'weather-article';
+            else {
+                element.className = 'weather-article active';
+            }
+            
+        }
 
     }
 
@@ -23,7 +33,8 @@ const Article = ({ identifier }) => {
     }
 
     return (
-        <article className={active ? 'weather-article active' : 'weather-article'} onClick={(e) => handleSetActive(e.target.parentElement)}>
+        <article className='weather-article active' onClick={(e) => e.target.parentElement.className ===
+        'weather-article' ? handleSetActive(e.target) : handleSetActive(e.target.parentElement)}>
             <h2>Date</h2>
             <p>Temp</p>
             <p>Wind</p>
