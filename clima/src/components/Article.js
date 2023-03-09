@@ -1,45 +1,47 @@
-import {useState, useEffect} from "react";
+// import {useState, useEffect} from "react";
 
 
-const Article = ({ identifier }) => {
-    const [active, setActive] = useState(false);
+const Article = () => {
 
-    const handleSetActive = (article) => {
+    const handleSetActive = (currentArticle) => {
         const articles = document.querySelectorAll('.weather-article');
-        const currentArticle = article;
-        console.log(currentArticle);
+        
+
+        if  (currentArticle.parentElement.className === 'weather-article' || currentArticle.parentElement.className === 'weather-article active')
+
+        return;
+
+        if (currentArticle.className === 'weather-article') {
+            currentArticle.className = 'weather-article active';
+        
+        
+        } else {
+            currentArticle.className = 'weather-article';
+        }
+        
         for (let index = 0; index < articles.length; index++) {
             const element = articles[index];
             if (element !== currentArticle)
             element.className = 'weather-article';
-            else {
-                element.className = 'weather-article active';
-            }
+            
             
         }
 
     }
 
-    const handleNewClick = () => {
-        const filtered = [];
-        active ? setActive (false) : setActive(true);
-        const articles = document.querySelector('.weather-article');
-        const currentArticle = articles[identifier];
-        for (let i = 0; i < articles.length; i++) {
-            if (articles[i] !== currentArticle) {
-                filtered.push(articles[i]);
-            }
-        }
-    }
-
+    
     return (
         <article className='weather-article active' onClick={(e) => e.target.parentElement.className ===
-        'weather-article' ? handleSetActive(e.target) : handleSetActive(e.target.parentElement)}>
+        'weather-grid' ? handleSetActive(e.target) : handleSetActive(e.target.parentElement)}>
+            <div className="img-block">
+                <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="weather icon" />
+            </div>
+            <div className="weather-details">
             <h2>Date</h2>
             <p>Temp</p>
             <p>Wind</p>
             <p>Humidity</p>
-
+            </div>
         </article>
     )
 }

@@ -174,18 +174,40 @@ body {
 } */
 
 .weather-article {
-  display: grid;
-  justify-content: center;
   padding: 1.5rem;
-  gap: 1rem;
-  grid-template-areas: 
-  "date"
-  "temp"
-  "wind"
-  "humidity";
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #fff;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 15px;
+}
+
+.weather-article .img-block {
+  height: 150px;
+  width: 150px;
+  background: transparent;
+  box-shadow: 0 15px  25px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+}
+
+.weather-article .img-block img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.weather-details {
+  transform: translateY(80px);
+}
+
+.weather-details h2 {
+  margin-bottom: 2rem;
+}
+
+.weather-article.active .weather-details {
+  transform: translateY(80px);
 }
 
 .footer {
